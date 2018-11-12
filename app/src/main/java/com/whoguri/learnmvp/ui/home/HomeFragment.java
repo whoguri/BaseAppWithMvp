@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.whoguri.learnmvp.R;
-import com.whoguri.learnmvp.javaBase.BaseFragment;
+import com.whoguri.learnmvp.kotlinBase.BaseFragment;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

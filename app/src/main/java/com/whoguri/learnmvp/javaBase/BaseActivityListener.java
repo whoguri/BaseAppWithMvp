@@ -7,7 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 
 public interface BaseActivityListener {
-    void replaceFragment(Fragment fragment, boolean isAddtoBackStack);
+    void replaceFragment(Fragment fragment, boolean isAddToBackStack);
     void goToActivity(Intent intent,boolean isToFinish);
     void showToast(String message);
     void showProgress();

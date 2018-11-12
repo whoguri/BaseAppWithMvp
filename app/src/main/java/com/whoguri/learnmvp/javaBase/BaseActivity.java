@@ -13,7 +13,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 import com.whoguri.learnmvp.R;
-import kotlin.annotation.Target;
 
 public class BaseActivity extends AppCompatActivity implements BaseActivityListener {
     int container;
@@ -39,6 +38,7 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityListe
     public void showProgress() {
         if (!progressDialog.isShowing())
             progressDialog.show();
+
     }
 
     public void hideProgress() {
@@ -46,10 +46,10 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityListe
             progressDialog.dismiss();
     }
 
-    public void replaceFragment(Fragment fragment,boolean isAddToBackStack){
-        if (container!=0) {
+    public void replaceFragment(Fragment fragment, boolean isAddToBackStack) {
+        if (container != 0) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(container,fragment);
+            transaction.replace(container, fragment);
             if (isAddToBackStack)
                 transaction.addToBackStack(fragment.getClass().getSimpleName());
             transaction.commit();
@@ -57,7 +57,7 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityListe
     }
 
     @Override
-    public void goToActivity(Intent intent,boolean isToFinish) {
+    public void goToActivity(Intent intent, boolean isToFinish) {
         startActivity(intent);
         if (isToFinish)
             finish();
