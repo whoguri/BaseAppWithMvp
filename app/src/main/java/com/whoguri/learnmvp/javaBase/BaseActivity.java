@@ -38,7 +38,6 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityListe
     public void showProgress() {
         if (!progressDialog.isShowing())
             progressDialog.show();
-
     }
 
     public void hideProgress() {
