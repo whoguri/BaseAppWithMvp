@@ -10,8 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.concurrent.TimeUnit;
 
 public class Network {
-    static Retrofit getRerofit() {
-
+    private static Retrofit getRetrofit() {
         return new Retrofit.Builder()
                 .baseUrl("http://sachtechsolution.com/anamelbeauty/api/")
                 .addConverterFactory(getConverterFactory())
@@ -33,7 +32,7 @@ public class Network {
                 .build();
     }
 
-    static Api getApi() {
-        return getRerofit().create(Api.class);
+   public static Api callApi() {
+        return getRetrofit().create(Api.class);
     }
 }
