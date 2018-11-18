@@ -2,7 +2,7 @@ package com.whoguri.learnmvp.ui.home
 
 import android.os.Bundle
 import com.whoguri.learnmvp.R
-import com.whoguri.learnmvp.kotlinBase.BaseActivity
+import com.whoguri.learnmvp.javaBase.BaseActivity
 
 class HomeActivity : BaseActivity(R.id.container) {
     override fun onCreate(savedInstanceState: Bundle?) {

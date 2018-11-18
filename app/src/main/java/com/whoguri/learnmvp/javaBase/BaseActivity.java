@@ -22,10 +22,6 @@ public class BaseActivity extends AppCompatActivity implements BaseActivityListe
         this.container = container;
     }
 
-    public BaseActivity() {
-        container = 0;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);

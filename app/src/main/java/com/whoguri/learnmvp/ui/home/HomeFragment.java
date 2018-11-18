@@ -8,13 +8,19 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import com.whoguri.learnmvp.R;
-import com.whoguri.learnmvp.kotlinBase.BaseFragment;
+import com.whoguri.learnmvp.javaBase.BaseFragment;
+import com.whoguri.learnmvp.javaBase.findView.FindView;
+import com.whoguri.learnmvp.javaBase.findView.Finder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends BaseFragment implements HomeView {
+    @FindView(viewId = R.id.homeButton)
+    Button homeButton;
+
     HomePresenter presenter=new HomePresenter(this);
     @Nullable
     @Override
@@ -25,8 +31,15 @@ public class HomeFragment extends BaseFragment implements HomeView {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Finder.startFinder(this,view);
         activityListener.showToast("yoo");
         presenter.getPost();
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             activityListener.showToast("reflection is working");
+            }
+        });
     }
 
     @Override
